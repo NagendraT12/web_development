@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="N" style="padding: 20px; border: 1px solid black; display: inline-block;">
+        <p id="text">Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+    </div>
+
+    <script>
+        const divElement = document.getElementById("N");
+        const textElement = document.getElementById("text");
+
+        // Click event - Change background color and text
+        divElement.addEventListener("click", function() {
+            divElement.style.backgroundColor = "red";
+            textElement.textContent = "Nagendra";
+        });
+
+        // Mouseover event - Change text
+        divElement.addEventListener("mouseover", function() {
+            textElement.textContent = "Change Text";
+        });
+
+        // Mouseout event - Reset text
+        divElement.addEventListener("mouseout", function() {
+            textElement.textContent = "Again Again";
+        });
+    </script>
+</body>
+</html>

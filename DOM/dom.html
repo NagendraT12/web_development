@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>Hiiiii, my name is Nagendra</h1>
+        <h1 class="header">Original Text</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <img id = "myimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBgCPQmyPHrOWxnUvbmQIRwOipjW8woZUreA&s" alt="njsdhho">
+    </div>
+
+    <script>
+        // Selecting elements
+        const rootnode = document.getElementById("root");
+        console.log("Root node:", rootnode);
+
+        const getelementbytagnames2 = document.getElementsByTagName("h1");
+        console.log("All H1 elements:", getelementbytagnames2);
+
+        const hedrclass = document.getElementsByClassName("header");  // ✅ Fixed typo
+        console.log("Elements with class 'header':", hedrclass);
+
+        const elements = document.querySelectorAll("#root");
+        console.log("Query Selector All for #root:", elements);
+
+        // DOM Manipulation - Changing content
+        const hedermul = document.getElementsByClassName("header"); 
+        hedermul[0].innerHTML = "DOM Manipulated Text"; // ✅ Fixed: Accessing first element correctly
+        document.getElementById("myimg").src = "https://cdn-imgix.headout.com/media/images/c9db3cea62133b6a6bb70597326b4a34-388-dubai-img-worlds-of-adventure-tickets-01.jpg?auto=format&w=1222.3999999999999&h=687.6&q=90&fit=crop&ar=16%3A9&crop=faces";
+        // Additional Styling with JavaScript
+        hedermul[0].style.color = "red";
+        hedermul[0].style.fontSize = "24px";
+        hedermul[0].style.fontWeight = "bold";
+        hedermul[0].style.backgroundColor = "yellow";
+
+        // Adding an Event Listener for Click
+        hedermul[0].addEventListener("click", function() {
+            hedermul[0].innerHTML = "You Clicked Me!";
+            hedermul[0].style.backgroundColor = "lightblue";
+        });
+    </script>
+</body>
+</html>

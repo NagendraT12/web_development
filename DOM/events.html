@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <div>
+        <h1>JavaScript DOM Events</h1>
+        <button onclick="changeBackgroundColor('black')">Black Background</button>
+        <button onclick="changeBackgroundColor('red')">Red Background</button>
+    </div>
+       
+    <div id="box" style="width: 200px; height: 200px; border: 1px solid black; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+        Nagendra
+    </div>
+
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        // Add event listeners
+        document.getElementById("box").addEventListener("mouseover", changeText);
+        document.getElementById("box").addEventListener("mouseout", resetText);
+
+        function changeText() {
+            document.getElementById("box").textContent = "Hi to all";
+        }
+
+        function resetText() {
+            document.getElementById("box").textContent = "Nagendra";
+        }
+    </script>
+</body>
+</html>
+ 

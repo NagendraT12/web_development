@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling & Capturing</title>
+</head>
+<body>
+    <div id="parent" style="padding: 30px; border: 2px solid red;">
+        Parent (Div)
+        <button id="child">Click Me</button>
+    </div>
+
+    <script>
+        // Event Bubbling (Default)
+        document.getElementById("parent").addEventListener("click", function() {
+            alert("Parent Div Clicked!");
+        });
+
+        document.getElementById("child").addEventListener("click", function(event) {
+            alert("Button Clicked!");
+            event.stopPropagation(); // Stops bubbling, so parent won't be triggered
+        });
+
+        // Event Capturing
+        document.getElementById("parent").addEventListener("click", function() {
+            alert("Parent Capturing!");
+        }, true); // 'true' enables capturing mode
+    </script>
+</body>
+</html>
